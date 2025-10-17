@@ -1,0 +1,405 @@
+/* admin.module.css */
+
+/* ================== */
+/*  GLOBAL & LAYOUT   */
+/* ================== */
+
+.adminApp {
+    display: flex;
+    min-height: 100vh;
+    background-color: #1e2227;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mainContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease;
+}
+
+.contentArea {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #2c3138;
+    border-radius: 8px;
+    color: #ecf0f1;
+    border: 1px solid #3c424a;
+}
+
+.container h1 {
+    text-align: left;
+    color: #e74c3c;
+    border-bottom: 2px solid #3c424a;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+/* ================== */
+/*      SIDEBAR       */
+/* ================== */
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3138;
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    border-right: 1px solid #3c424a;
+}
+
+.sidebarHeader {
+    position: relative;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #e74c3c;
+    color: white;
+}
+
+.sidebarNav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.sidebarNav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s ease, border-left 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebarNav a:hover {
+    background-color: #3c424a;
+    border-left: 4px solid #e74c3c;
+}
+
+.sidebarNav .active {
+    background-color: #e74c3c;
+    font-weight: bold;
+}
+
+.sidebarCloseBtn {
+    display: none;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* ================== */
+/*       HEADER       */
+/* ================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2c3138;
+    border-bottom: 1px solid #3c424a;
+}
+
+.headerLeft, .headerRight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.sidebarToggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.headerLink {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.userMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userName {
+    font-weight: bold;
+}
+
+.logoutButton {
+    color: #e74c3c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ================== */
+/*      OVERLAY       */
+/* ================== */
+
+.sidebarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* ================== */
+/*      DASHBOARD     */
+/* ================== */
+
+.dashboardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.dashboardCard {
+    display: block;
+    background-color: #3c424a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: #ecf0f1;
+}
+
+.dashboardCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.dashboardCard h2 {
+    margin: 0 0 10px 0;
+    color: #e74c3c;
+    font-size: 1.3em;
+}
+
+/* ================== */
+/*       TABLES       */
+/* ================== */
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: #3c424a;
+}
+
+.adminTable th, .adminTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #4a525a;
+}
+
+.adminTable th {
+    background-color: #2c3138;
+    color: #e74c3c;
+}
+
+.adminTable tr:hover {
+    background-color: #4a525a;
+}
+
+/* ================== */
+/*       FORMS        */
+/* ================== */
+
+.adminFormContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.formGroup input, .formGroup select, .formGroup textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4a525a;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #1e2227;
+    color: #ecf0f1;
+}
+
+/* ================== */
+/*      BUTTONS       */
+/* ================== */
+
+.actionBtn, .buttonSave, .buttonUpdate {
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.actionBtn:hover, .buttonSave:hover, .buttonUpdate:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.editBtn { background-color: #f39c12; }
+.deleteBtn { background-color: #e74c3c; }
+.addBtn { background-color: #27ae60; }
+
+.buttonSave, .buttonUpdate {
+    padding: 12px 24px;
+    font-size: 1.1em;
+}
+
+.buttonSave { background-color: #27ae60; }
+.buttonUpdate { background-color: #e74c3c; }
+
+.footerActions {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #3c424a;
+}
+
+/* ================== */
+/*  REWARDS SECTION   */
+/* ================== */
+
+.gachaRewardsSection {
+    grid-column: 1 / -1; /* Ocupa a largura total no grid */
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #4a525a;
+}
+
+.gachaRewardsSection h2 {
+    color: #e74c3c;
+}
+
+.rewardsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.rewardsTable th, .rewardsTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #4a525a;
+    vertical-align: middle;
+}
+
+.rewardsTable th {
+    background-color: #2c3138;
+    font-size: 0.9em;
+}
+
+.rewardsTable td {
+    background-color: #3c424a;
+}
+
+.formInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #4a525a;
+    border-radius: 4px;
+    background-color: #1e2227;
+    color: #ecf0f1;
+    font-size: 0.9em;
+}
+
+.formInput:disabled {
+    background-color: #2c3138;
+    cursor: not-allowed;
+}
+
+.buttonAddReward {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.buttonAddReward:hover {
+    background-color: #2ecc71;
+}
+
+
+/* ================== */
+/*    RESPONSIVE      */
+/* ================== */
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        height: 100%;
+        z-index: 1000;
+        transform: translateX(-100%);
+    }
+
+    .sidebarOpen {
+        transform: translateX(0);
+    }
+
+    .sidebarToggle {
+        display: block;
+    }
+
+    .adminFormContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebarOverlay {
+        display: block;
+    }
+
+    .sidebarCloseBtn {
+        display: block;
+    }
+}

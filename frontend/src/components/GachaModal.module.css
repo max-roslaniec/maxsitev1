@@ -1,0 +1,155 @@
+/* GachaModal.module.css */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes cardShine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out forwards;
+    padding: 1rem;
+}
+
+.modalContent {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    perspective: 1000px; /* Para o efeito de flip 3D */
+}
+
+/* CARD DA RECOMPENSA */
+.rewardCard {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(145deg, #4a525a, #2c3138);
+    border-radius: 15px;
+    border: 2px solid #e74c3c;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.5), 0 0 30px rgba(231, 76, 60, 0.3);
+    animation: scaleUp 0.5s ease-out 0.2s backwards;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+/* Efeito de brilho no card */
+.rewardCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
+    animation: cardShine 3s infinite linear;
+}
+
+.rewardHeader h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #e74c3c;
+    margin: 0;
+}
+
+.rewardImageContainer {
+    width: 60%;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #4a525a;
+}
+
+.rewardImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.rewardInfo h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.rewardInfo p {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #f39c12; /* Cor de ouro para o valor */
+    font-weight: bold;
+}
+
+/* Tag de Raridade */
+.rarityBanner {
+    position: absolute;
+    top: 20px;
+    left: -35px;
+    transform: rotate(-45deg);
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.closeButton:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}

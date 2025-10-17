@@ -1,0 +1,820 @@
+/* ================================== */
+/* ARQUIVO MESTRE DE ESTILOS          */
+/* ================================== */
+
+/* Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+h1, h2, h3, h4 {
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Navegação Principal */
+.main-nav {
+    background-color: #ff5555;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.main-nav a {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+.main-nav a:hover {
+    background-color: #cc4444;
+}
+
+/* Containers e Layouts Gerais */
+.site-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    border: 1px solid #AAAAFF;
+}
+.container h1 {
+    text-align: center;
+    color: #ff5555;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ff5555;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+.container h2 {
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #ff5555;
+}
+
+/* Página Inicial (Homepage) */
+.main-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.main-banner img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 85, 85, 0.3);
+}
+.main-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 2rem;
+}
+.sidebar-left, .sidebar-right {
+    background-color: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+.main-content {
+    background-color: #151515;
+    padding: 2rem;
+    border-radius: 8px;
+}
+.main-layout h3 {
+    margin-bottom: 1rem;
+    color: #ff5555;
+    text-align: center;
+    border-bottom: 2px solid #ff5555;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+.ranking-list-home {
+    list-style: none;
+    padding: 0;
+}
+.ranking-list-home li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+.ranking-list-home li:hover {
+    transform: scale(1.02);
+}
+.ranking-list-home .rank-icon {
+    width: 25px;
+    height: 15px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.ranking-list-home .player-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.ranking-list-home .player-nick {
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 0.95em;
+}
+.ranking-list-home .player-gp {
+    font-size: 0.85em;
+    color: #cccccc;
+}
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.news-container h3 {
+    border-bottom: none;
+    padding-top: 1rem; /* Adiciona o espaçamento superior desejado */
+    margin-top: 0; /* Remove a margem padrão do h3 para evitar espaçamento duplo */
+}
+.news-card {
+    display: block;
+    background-color: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #444;
+    border-top-width: 4px;
+    color: #f0f0f0;
+}
+.news-card:hover {
+    border-color: #FFFF55;
+}
+.news-card h4 {
+    margin: 0 0 10px 0;
+    color: #FFFF55;
+}
+.news-card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #AAAAFF;
+    margin-top: 1rem;
+}
+
+/* Página de Ranking */
+.search-container {
+    background-color: #151515;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #ff5555;
+}
+.search-container form {
+    display: flex;
+    gap: 10px;
+}
+.search-container input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+}
+.search-container button {
+    padding: 10px 25px;
+    background-color: #ff5555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+}
+.search-result h2 {
+    text-align: center;
+    color: #FFFF55;
+    border-bottom: 2px solid #FFFF55;
+    padding-bottom: 10px;
+}
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #2a2a2a;
+}
+.ranking-table th, .ranking-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+.ranking-table th {
+    background-color: #ff5555;
+    color: #ffffff;
+}
+.ranking-table .nickname {
+    font-weight: 500;
+    color: #AAAAFF;
+}
+
+/* Página da Loja */
+.filter-container {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+}
+.filter-container form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filter-container select, .filter-search {
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    flex-grow: 1;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+.filter-container button {
+    padding: 8px 20px;
+    background-color: #ff5555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.shop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    margin-top: 30px;
+}
+.item-card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease;
+}
+.item-card:hover {
+    border-color: #AAAAFF;
+}
+.item-image {
+    width: 180px;
+    height: 80px;
+    margin: 0 auto 10px auto;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    object-fit: contain;
+}
+.item-name {
+    font-size: 1em;
+    color: #FFFF55;
+    margin: 0 0 10px 0;
+    min-height: 32px;
+    font-family: 'Exo 2', sans-serif;
+    flex-grow: 1;
+}
+.item-details {
+    font-size: 0.75em;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+.item-details p {
+    margin: 2px 0;
+}
+.item-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+.buy-button-logged-in {
+    background-color: #ff5555;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    display: block;
+    text-align: center;
+}
+.buy-button-logged-in:hover {
+    background-color: #cc4444;
+}
+.login-to-buy-button {
+    background-color: #333;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    display: block;
+    text-align: center;
+}
+.login-to-buy-button:hover {
+    background-color: #444;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.pagination button {
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #AAAAFF;
+    background-color: #ff5555;
+    cursor: pointer;
+    font-family: 'Exo 2', sans-serif;
+}
+.pagination button:hover {
+    background-color: #cc4444;
+}
+.pagination button.active {
+    background-color: #cc4444;
+    color: white;
+    font-weight: bold;
+}
+.pagination .prev-next {
+    font-weight: bold;
+}
+
+/* Componentes (Formulários, Painel de Usuário, etc.) */
+.download-button, .register-button {
+    display: block;
+    background-color: #ff5555;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.2em;
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+}
+.hightech-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #AAAAFF;
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #FFFF55;
+    box-shadow: 0 0 10px rgba(255, 255, 85, 0.3);
+}
+.user-panel h3 {
+    text-align: center;
+    word-wrap: break-word;
+    border-bottom: 2px solid #ff5555;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+.user-stats {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+.stat-label {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    color: #AAAAFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.stat-value {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.stat-value.gp { color: #FFFF55; }
+.stat-value.gold { color: #FFD700; }
+.stat-value.cash { color: #27ae60; }
+.stat-rank-icon {
+    width: 25px;
+    height: 15px;
+}
+.logout-button {
+    display: block;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.logout-button:hover {
+    background-color: #444;
+}
+
+/* Classes de Mensagem */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+}
+.success {
+    background-color: #16a085;
+    border: 1px solid #1abc9c;
+}
+.error {
+    background-color: #c0392b;
+    border: 1px solid #e74c3c;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-left, .sidebar-right {
+        order: 2;
+    }
+    .main-content {
+        order: 1;
+    }
+}
+
+/* ================================== */
+/* CORREÇÃO DE ESPAÇAMENTO - SIDEBAR LOGIN */
+/* ================================== */
+
+/* Garante que o formulário não adicione espaçamentos extras que atrapalhem */
+.sidebar-login {
+    gap: 0; /* Remove o gap para controlarmos manualmente */
+    margin-bottom: 1.5rem; /* Espaço entre o botão 'ENTRAR' e o link 'Cadastre-se' */
+}
+
+/* Espaçamento para o link de cadastro */
+.sidebar-register-link {
+    display: block; /* &lt;-- A LINHA CRUCIAL QUE FALTAVA */
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; /* Garante o espaço abaixo */
+    color: #AAAAFF;
+}
+
+.sidebar-register-link:hover {
+    text-decoration: underline;
+}
+
+/* src/index.css (adicionar no final) */
+
+/* ================================== */
+/* ESTILOS PARA PÁGINAS DE ADMIN      */
+/* ================================== */
+
+/* Cabeçalho da Lista (ex: "Gerenciar Notícias" e botão "Criar") */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #444;
+}
+
+.list-header h1 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.8em;
+    color: #ff5555;
+}
+
+/* Tabela de itens do Admin */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: #2a2a2a;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+.admin-table th {
+    background-color: #333;
+    color: #ff5555;
+    font-size: 1.1em;
+}
+
+.admin-table tr:hover {
+    background-color: #3c3c3c;
+}
+
+/* Botões de Ação na Tabela */
+.action-btn {
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+.action-btn:hover {
+    transform: scale(1.05);
+}
+
+.edit-btn {
+    background-color: #f39c12; /* Laranja */
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Vermelho */
+}
+
+.add-btn {
+    background-color: #27ae60; /* Verde */
+}
+
+/* Adicione no final do seu arquivo index.css */
+.owned-item-text {
+  display: block;
+  text-align: center;
+  padding: 8px 10px;
+  background-color: #333;
+  color: #aaa;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Exo 2', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  margin-top: 10px; /* Alinha com o botão que ele substitui */
+  cursor: not-allowed;
+}
+
+/* ================================== */
+/* --- SISTEMA DE NOTIFICAÇÕES ---    */
+/* ================================== */
+.notifications-container { position: relative; }
+.notification-bell { background: none; border: none; font-size: 1.5rem; cursor: pointer; position: relative; padding: 0 5px; color: white; }
+.notification-badge {
+    position: absolute; top: -2px; right: -2px; background-color: #e74c3c;
+    color: white; border-radius: 50%; width: 18px; height: 18px;
+    font-size: 0.7em; font-weight: bold; display: flex; justify-content: center; align-items: center;
+    border: 1px solid #111;
+}
+.notifications-dropdown {
+    position: absolute; top: 50px; right: 0; width: 350px; max-height: 400px; overflow-y: auto;
+    background-color: #2a2a2a; border: 1px solid #444; border-radius: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-transform: none; font-family: 'Roboto', sans-serif; font-weight: normal; z-index: 1001;
+}
+.notifications-dropdown .notifications-header {
+    padding: 1rem; font-weight: bold; text-align: center; border-bottom: 1px solid #444;
+    background-color: #333; font-family: 'Exo 2', sans-serif; text-transform: uppercase;
+}
+.notifications-dropdown ul { list-style: none; }
+.notifications-dropdown li { padding: 1rem; border-bottom: 1px solid #444; }
+.notifications-dropdown li:last-child { border-bottom: none; }
+.notifications-dropdown li p { margin: 0; font-size: 0.9em; }
+.notifications-dropdown li small { color: #999; font-size: 0.75em; margin-top: 5px; display: block; }
+.notifications-dropdown .no-notifications { padding: 1.5rem; text-align: center; color: #999; }
+
+/* Adicione este código ao seu index.css */
+
+.manage-guild-button, .logout-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.manage-guild-button {
+    background-color: #f39c12; /* Laranja/Amarelo */
+    color: #111;
+}
+
+.logout-button {
+    background-color: #c0392b; /* Vermelho */
+    color: white;
+}
+
+.logout-button:hover, .manage-guild-button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Estilos para a seção de destaque do ranking do usuário */
+.user-rank-highlight {
+  background-color: #2a2a2a; /* Um fundo ligeiramente diferente para destacar */
+  border: 1px solid #8a2be2; /* Uma borda chamativa (azul-violeta) */
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(138, 43, 226, 0.3); /* Sombra sutil com a cor da borda */
+}
+
+.user-rank-highlight h2 {
+  color: #8a2be2; /* Cor do título igual à da borda */
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* Mais espaço abaixo do título */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Ajustes na tabela dentro do destaque para manter a consistência */
+.user-rank-highlight .ranking-table {
+  margin-top: 0; /* Remover a margem superior padrão da tabela de ranking */
+  background-color: #333; /* Fundo um pouco mais escuro para contraste */
+}
+
+.user-rank-highlight .ranking-table th {
+  background-color: #8a2be2; /* Cabeçalho da tabela com a cor de destaque */
+  color: #ffffff;
+}
+
+.user-rank-highlight .ranking-table .nickname {
+  color: #aadeff; /* Uma cor de destaque para o nickname */
+  font-weight: bold;
+}
+
+/* ================================== */
+/* --- GUILD CREATION REQUIREMENTS --- */
+/* ================================== */
+
+.requirements-box {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-top: 4px solid #ff5555;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.requirements-box h3 {
+    font-family: 'Exo 2', sans-serif;
+    color: #ff5555;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1em;
+}
+
+.requirement-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.requirement-item:last-child {
+    border-bottom: none;
+}
+
+.requirement-status {
+    font-size: 1.5em;
+    margin-right: 1rem;
+}
+
+.requirement-text {
+    flex-grow: 1;
+    color: #f5f5f5; /* Brighter white */
+    font-weight: 500;
+}
+
+.requirement-text small {
+    display: block;
+    font-size: 0.85em;
+    color: #cccccc; /* Brighter gray */
+    font-style: italic;
+    font-weight: 400;
+}
+
+.requirement-item.success .requirement-status {
+    color: #27ae60; /* Green */
+}
+
+.requirement-item.fail .requirement-status {
+    color: #c0392b; /* Red */
+}

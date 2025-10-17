@@ -1,0 +1,20 @@
+/* src/public.module.css */
+/* Conteúdo do seu portal.css original para o tema High Tech */
+.hightechTheme a { text-decoration: none; color: inherit; }
+.mainNav { background-color: #ff5555; padding: 1rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; gap: 2rem; font-family: 'Exo 2', sans-serif; font-weight: 700; text-transform: uppercase; }
+.mainNav a:hover { background-color: #cc4444; }
+.siteWrapper { max-width: 1400px; margin: 0 auto; padding: 1rem; }
+.container { max-width: 1200px; margin: 2rem auto; padding: 2rem; background-color: #1f1f1f; border-radius: 8px; border: 1px solid #AAAAFF; }
+.container h1 { text-align: center; color: #ff5555; text-transform: uppercase; margin-bottom: 2rem; border-bottom: 2px solid #ff5555; padding-bottom: 10px; margin-top: 0; }
+.mainBanner { text-align: center; margin-bottom: 2rem; }
+.mainBanner img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(255, 85, 85, 0.3); }
+.mainLayout { display: grid; grid-template-columns: 250px 1fr 250px; gap: 2rem; }
+.sidebarLeft, .sidebarRight { background-color: #1f1f1f; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
+.mainContent { background-color: #151515; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
+.rankingList { list-style: none; padding: 0; }
+.rankingList li { display: flex; align-items: center; margin-bottom: 1rem; padding: 0.5rem; background-color: #2a2a2a; border-radius: 4px; transition: transform 0.2s ease; }
+.rankingTable { width: 100%; border-collapse: collapse; margin-top: 30px; background-color: #2a2a2a; }
+.rankingTable th, .rankingTable td { padding: 10px; text-align: left; border-bottom: 1px solid #444; }
+.rankingTable th { background-color: #ff5555; color: #ffffff; }
+.rankingTable .nickname { font-weight: 500; color: #AAAAFF; }
+/* Adicione aqui qualquer outra classe do seu portal.css */
