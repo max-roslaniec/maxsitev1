@@ -31,7 +31,7 @@ const rankIcons = {
 };
 
 // =================================================================================
-// Componente para o formulário de SWAP de GOLD para GCASH (Lógica Existente)
+// Componente para o formulário de SWAP de GOLD para GCASH (Lógica Existente.) 
 // =================================================================================
 const GoldToGcashSwap = ({ rates, userData, token }) => {
     const [goldAmount, setGoldAmount] = useState('');
